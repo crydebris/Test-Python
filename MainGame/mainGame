@@ -15,7 +15,7 @@ import random
 # Game Init
 pygame.init()
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
-pygame.display.set_caption('飞机大战')
+pygame.display.set_caption('Shoot Mania')
 
 # Resource Music
 bullet_sound = pygame.mixer.Sound('resources/sound/bullet.wav')
@@ -37,9 +37,9 @@ plane_img = pygame.image.load(filename)
 
 # Player
 player_rect = []
-player_rect.append(pygame.Rect(0, 99, 102, 126))        # 玩家精灵图片区域
+player_rect.append(pygame.Rect(0, 99, 102, 126))        
 player_rect.append(pygame.Rect(165, 360, 102, 126))
-player_rect.append(pygame.Rect(165, 234, 102, 126))     # 玩家爆炸精灵图片区域
+player_rect.append(pygame.Rect(165, 234, 102, 126))     
 player_rect.append(pygame.Rect(330, 624, 102, 126))
 player_rect.append(pygame.Rect(330, 498, 102, 126))
 player_rect.append(pygame.Rect(432, 624, 102, 126))
@@ -128,7 +128,7 @@ while running:
     # --
     if not player.is_hit:
         screen.blit(player.image[player.img_index], player.rect)
-        # 更换图片索引使飞机有动画效果
+        
         player.img_index = shoot_frequency / 8
     else:
         player.img_index = player_down_index / 8
